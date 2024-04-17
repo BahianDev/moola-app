@@ -26,6 +26,9 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.leaflet-control-zoom {
+  display: none;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
