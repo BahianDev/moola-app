@@ -59,9 +59,9 @@ export default function Map() {
             wlCount: message.prize === 'wl' ? old.wlCount - 1 : old.wlCount,
           };
         });
-        toast.success(`Congratulations! You won ${message.prize}`);
+        toast.success(`Congratulations! You won ${message.prize.toUpperCase()}`);
       } else {
-        toast.error("Try again");
+        toast.error("Try again!");
       }
     }
 
