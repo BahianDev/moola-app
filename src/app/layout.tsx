@@ -1,9 +1,10 @@
-"use client"
+"use client";
 require("@solana/wallet-adapter-react-ui/styles.css");
 import { Inter } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 const inter = Inter({ subsets: ["latin"] });
 
 const WalletConnectionProvider = dynamic(
@@ -13,6 +14,8 @@ const WalletConnectionProvider = dynamic(
   }
 );
 
+const queryClient = new QueryClient();
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,23 +24,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <WalletConnectionProvider>
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              style: {
-                border: "1px solid #02FFA7",
-                color: "#02FFA7",
-                fontWeight: "bold",
-                backgroundColor: "#000000",
-                padding: "12px",
-                fontSize: "18px",
-              },
-            }}
-          />
+        <QueryClientProvider client={queryClient}>
+          <WalletConnectionProvider>
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                style: {
+                  border: "1px solid #02FFA7",
+                  color: "#02FFA7",
+                  fontWeight: "bold",
+                  backgroundColor: "#000000",
+                  padding: "12px",
+                  fontSize: "18px",
+                },
+              }}
+            />
 
-          {children}
-        </WalletConnectionProvider>
+            {children}
+          </WalletConnectionProvider>
+        </QueryClientProvider>
       </body>
     </html>
   );
