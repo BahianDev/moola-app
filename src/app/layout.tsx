@@ -30,10 +30,10 @@ export default function RootLayout({
               position="top-right"
               toastOptions={{
                 style: {
-                  border: "1px solid #02FFA7",
-                  color: "#02FFA7",
+                  border: "4px solid #000",
+                  color: "#000",
                   fontWeight: "bold",
-                  backgroundColor: "#000000",
+                  backgroundColor: "#F6F01A",
                   padding: "12px",
                   fontSize: "18px",
                 },
