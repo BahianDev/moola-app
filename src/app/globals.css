@@ -35,7 +35,23 @@ body {
   }
 }
 
-
 .map {
   height: 60vh;
- }
+}
+
+.wallet-adapter-button-trigger {
+  background-color: #f6f01a !important;
+  color: #000b11;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+
+  height: auto;
+  border: 4px solid #000b11;
+  font-size: 40px;
+  z-index: 100;
+}
+
+.wallet-adapter-button-trigger:hover {
+  box-shadow: #FFF 2px 2px 32px !important;
+}
