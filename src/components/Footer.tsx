@@ -1,5 +1,6 @@
 import { RiTwitterXFill } from "react-icons/ri";
 import { FaInstagram, FaDiscord } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -8,12 +9,20 @@ export default function Footer() {
         ©WHERESMOOLA.ALL RIGHTS RESERVED.
       </span>
       <div className="flex gap-4">
-        <span className="text-black text-5xl font-medium">
+        <Link
+          href={"https://twitter.com/wheresmoola"}
+          target="_blank"
+          className="text-black text-5xl font-medium"
+        >
           <RiTwitterXFill />
-        </span>
-        <span className="text-black text-5xl font-medium">
+        </Link>
+        <Link
+          href={"https://www.instagram.com/wheresmoola/"}
+          target="_blank"
+          className="text-black text-5xl font-medium"
+        >
           <FaInstagram />
-        </span>
+        </Link>
         <span className="text-black text-5xl font-medium">
           <FaDiscord />
         </span>

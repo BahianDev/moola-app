@@ -24,6 +24,11 @@ body {
 .leaflet-control-zoom {
   display: none;
 }
+
+.leaflet-bottom {
+  display: none;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

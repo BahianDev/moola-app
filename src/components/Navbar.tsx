@@ -17,7 +17,6 @@ export default function Navbar() {
           style={{
             fontSize: "20px",
             height: '50px'
-
           }}
         />
       )}
