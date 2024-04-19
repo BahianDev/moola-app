@@ -5,12 +5,13 @@ import "leaflet-defaulticon-compatibility";
 import "leaflet/dist/leaflet.css";
 
 import { MapContainer, TileLayer, useMapEvents } from "react-leaflet";
-import { useQuery } from "@tanstack/react-query";
+import { QueryClient, useQuery } from "@tanstack/react-query";
 import { api } from "@/services/api";
 import { useEffect, useState } from "react";
 import { socket } from "@/services/socket";
 import { useWallet } from "@solana/wallet-adapter-react";
 import toast from "react-hot-toast";
+import { queryClient } from "@/app/layout";
 
 interface IConfig {
   ogCount: number;
@@ -51,8 +52,17 @@ export default function Map() {
     }
 
     function onMessage(message: any) {
-      console.log(message)
-      toast.error("error")
+      if (message.result == true) {
+        queryClient.setQueryData(["config"], (old: any) => {
+          return {
+            ogCount: message.prize === 'og' ? old.ogCount - 1 : old.ogCount ,
+            wlCount: message.prize === 'wl' ? old.wlCount - 1 : old.wlCount,
+          };
+        });
+        toast.success(`Congratulations! You won ${message.prize}`);
+      } else {
+        toast.error("Try again");
+      }
     }
 
     function onDisconnect() {
@@ -61,7 +71,7 @@ export default function Map() {
     }
 
     socket.on("connect", onConnect);
-    socket.on("onMessage", (arg) => onMessage(arg))
+    socket.on("onMessage", (arg) => onMessage(arg));
     socket.on("disconnect", onDisconnect);
 
     return () => {

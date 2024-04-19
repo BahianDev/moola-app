@@ -14,7 +14,7 @@ const WalletConnectionProvider = dynamic(
   }
 );
 
-const queryClient = new QueryClient();
+export const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
