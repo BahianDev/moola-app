@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { socket } from "@/services/socket";
 import { useWallet } from "@solana/wallet-adapter-react";
 import toast from "react-hot-toast";
-import { queryClient } from "@/app/layout";
+import { queryClient } from "@/services/react-query";
 
 interface IConfig {
   ogCount: number;

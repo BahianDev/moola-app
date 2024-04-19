@@ -5,6 +5,7 @@ import "./globals.css";
 import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "@/services/react-query";
 const inter = Inter({ subsets: ["latin"] });
 
 const WalletConnectionProvider = dynamic(
@@ -14,7 +15,6 @@ const WalletConnectionProvider = dynamic(
   }
 );
 
-export const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
