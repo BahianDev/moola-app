@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Moola</title>
+        <title>Wheres Moola</title>
         <meta property="og:title" content="Moola" key="title" />
         <link rel="shortcut icon" href="/logo.png" />
         <meta property="og:image" content="/logo.png" />
