@@ -15,7 +15,7 @@ export default function Home() {
       {connected ? (
         <MapComponent />
       ) : (
-        <div className={`${hovered ? 'bg-home_cow': 'bg-home'} w-full h-full bg-cover flex items-end justify-center py-10`}>
+        <div className={`${hovered ? 'bg-home_cow': 'bg-home'} w-full h-full bg-cover bg-center flex items-end justify-center py-10`}>
           <WalletMultiButton>
             <div 
             className="p-4"
