@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/services/react-query";
+import NextAuthProvider from "@/providers/authProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 const WalletConnectionProvider = dynamic(
@@ -41,25 +42,27 @@ export default function RootLayout({
         <meta property="twitter:image" content="/logo.png" />
       </head>
       <body className={inter.className}>
-        <QueryClientProvider client={queryClient}>
-          <WalletConnectionProvider>
-            <Toaster
-              position="top-right"
-              toastOptions={{
-                style: {
-                  border: "4px solid #000",
-                  color: "#000",
-                  fontWeight: "bold",
-                  backgroundColor: "#F6F01A",
-                  padding: "12px",
-                  fontSize: "18px",
-                },
-              }}
-            />
+        <NextAuthProvider>
+          <QueryClientProvider client={queryClient}>
+            <WalletConnectionProvider>
+              <Toaster
+                position="top-right"
+                toastOptions={{
+                  style: {
+                    border: "4px solid #000",
+                    color: "#000",
+                    fontWeight: "bold",
+                    backgroundColor: "#F6F01A",
+                    padding: "12px",
+                    fontSize: "18px",
+                  },
+                }}
+              />
 
-            {children}
-          </WalletConnectionProvider>
-        </QueryClientProvider>
+              {children}
+            </WalletConnectionProvider>
+          </QueryClientProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );

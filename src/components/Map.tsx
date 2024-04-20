@@ -12,6 +12,7 @@ import { socket } from "@/services/socket";
 import { useWallet } from "@solana/wallet-adapter-react";
 import toast from "react-hot-toast";
 import { queryClient } from "@/services/react-query";
+import { useSession } from "next-auth/react";
 
 interface IConfig {
   ogCount: number;
@@ -20,12 +21,21 @@ interface IConfig {
 
 function LocationMarker() {
   const { publicKey } = useWallet();
+  const { data, status } = useSession();
+
   useMapEvents({
     click(e) {
+      if (status !== 'authenticated') {
+        return toast.error("You need make Discord Login")
+      }
+
+      const user: any = data
+
       socket.emit("newMessage", {
         lat: e.latlng.lat,
         lng: e.latlng.lng,
         receiver: publicKey?.toString(),
+        discordId: user.discordUser.id
       });
     },
   });
