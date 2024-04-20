@@ -113,6 +113,10 @@ export default function Map() {
         scrollWheelZoom={false}
         minZoom={3}
         maxZoom={3}
+        maxBounds={[
+          [-66.42148583521261, -184.59286987781528],
+          [65.74290423785182, 185.09765625],
+        ]}
         style={{ height: "100%", width: "100%", background: "#F6F01A" }}
       >
         <TileLayer
