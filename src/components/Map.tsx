@@ -55,13 +55,19 @@ export default function Map() {
       if (message.result == true) {
         queryClient.setQueryData(["config"], (old: any) => {
           return {
-            ogCount: message.prize === 'og' ? old.ogCount - 1 : old.ogCount ,
-            wlCount: message.prize === 'wl' ? old.wlCount - 1 : old.wlCount,
+            ogCount: message.prize === "og" ? old.ogCount - 1 : old.ogCount,
+            wlCount: message.prize === "wl" ? old.wlCount - 1 : old.wlCount,
           };
         });
-        toast.success(`Congratulations! You won ${message.prize.toUpperCase()}`);
+        toast.success(
+          `Congratulations! You won ${message.prize.toUpperCase()}`
+        );
       } else {
-        toast.error("Try again!");
+        if (message.exists == true) {
+          toast.error("You`re  already claimed!");
+        } else {
+          toast.error("Try again!");
+        }
       }
     }
 
