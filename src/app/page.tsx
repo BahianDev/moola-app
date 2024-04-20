@@ -13,6 +13,7 @@ export default function Home() {
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
+    console.log(status, 'status')
     if (status !== 'authenticated') {
       signIn("discord")
     }
