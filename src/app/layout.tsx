@@ -4,9 +4,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/services/react-query";
-import { Head } from "next/document";
 const inter = Inter({ subsets: ["latin"] });
 
 const WalletConnectionProvider = dynamic(
