@@ -115,7 +115,11 @@ export default function Map() {
         maxZoom={3}
         style={{ height: "100%", width: "100%", background: "#F6F01A" }}
       >
-        <TileLayer url="/Map/{z}/{x}/{y}.png" noWrap />
+        <TileLayer
+          attribution="its offline"
+          url="/Map/{z}/{x}/{y}.png"
+          noWrap
+        />
         <LocationMarker />
       </MapContainer>
     </div>
