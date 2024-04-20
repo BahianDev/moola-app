@@ -14,7 +14,7 @@ export default function Home() {
 
   useEffect(() => {
     console.log(status, 'status')
-    if (status !== 'authenticated') {
+    if (status !== 'authenticated' && status !== 'loading') {
       signIn("discord")
     }
   }, [status]);
