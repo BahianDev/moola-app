@@ -25,8 +25,8 @@ export default function RootLayout({
       <head>
         <title>Moola</title>
         <meta property="og:title" content="Moola" key="title" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta property="og:image" content="/favicon.ico" />
+        <link rel="shortcut icon" href="/logo.png" />
+        <meta property="og:image" content="/logo.png" />
         <meta
           name="description"
           content="Creating the first and biggest puzzle IP on Solana. Find Moola the golden cow to win $SOL 🐮"
