@@ -23,9 +23,13 @@ export default function Footer() {
         >
           <FaInstagram />
         </Link>
-        <span className="text-black text-5xl font-medium">
+        <Link
+          href={"https://discord.gg/wheresmoola"}
+          target="_blank"
+          className="text-black text-5xl font-medium"
+        >
           <FaDiscord />
-        </span>
+        </Link>
       </div>
     </footer>
   );

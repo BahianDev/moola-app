@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/services/react-query";
+import { Head } from "next/document";
 const inter = Inter({ subsets: ["latin"] });
 
 const WalletConnectionProvider = dynamic(
@@ -15,7 +16,6 @@ const WalletConnectionProvider = dynamic(
   }
 );
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,6 +23,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Moola</title>
+        <meta property="og:title" content="Moola" key="title" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content="/favicon.ico" />
+        <meta
+          name="description"
+          content="Creating the first and biggest puzzle IP on Solana. Find Moola the golden cow to win $SOL 🐮"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://sansalabs.io/" />
+        <meta property="twitter:title" content={`Moola`} />
+        <meta
+          property="twitter:description"
+          content={`Creating the first and biggest puzzle IP on Solana. Find Moola the golden cow to win $SOL 🐮`}
+        />
+        <meta property="twitter:image" content="/favicon.ico" />
+      </head>
       <body className={inter.className}>
         <QueryClientProvider client={queryClient}>
           <WalletConnectionProvider>
