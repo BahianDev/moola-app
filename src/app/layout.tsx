@@ -38,7 +38,7 @@ export default function RootLayout({
           property="twitter:description"
           content={`Creating the first and biggest puzzle IP on Solana. Find Moola the golden cow to win $SOL 🐮`}
         />
-        <meta property="twitter:image" content="/favicon.ico" />
+        <meta property="twitter:image" content="/logo.png" />
       </head>
       <body className={inter.className}>
         <QueryClientProvider client={queryClient}>
