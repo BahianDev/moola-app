@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between h-screen">
       <Navbar />
-      {connected ? (
+      {!connected ? (
         <MapComponent />
       ) : (
         <div className={`${hovered ? 'bg-home_cow': 'bg-home'} w-full h-full bg-cover bg-center flex items-end justify-center py-10`}>
