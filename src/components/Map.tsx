@@ -31,6 +31,7 @@ function LocationMarker() {
 
       const user: any = data
 
+
       socket.emit("newMessage", {
         lat: e.latlng.lat,
         lng: e.latlng.lng,
@@ -124,8 +125,8 @@ export default function Map() {
         minZoom={3}
         maxZoom={3}
         maxBounds={[
-          [-66.42148583521261, -184.59286987781528],
-          [65.74290423785182, 185.09765625],
+          [-77.1632679153209, -185.13944130645604],
+          [77.211626637463, 185.17357802018526],
         ]}
         style={{ height: "100%", width: "100%", background: "#F6F01A" }}
       >
