@@ -23,21 +23,21 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between h-screen">
       <Navbar />
       {connected ? (
-        // <></>
-        <MapComponent />
+        <></>
+        // <MapComponent />
       ) : (
         <div
           className={`${
             hovered ? "bg-home_cow" : "bg-home"
           } w-full h-full bg-cover bg-center flex items-end justify-center py-10`}
         >
-          <WalletMultiButton>
+          <WalletMultiButton disabled>
             <div
               className="p-4"
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
             >
-              FIND MOOLA
+              COMING SOON
             </div>
           </WalletMultiButton>
         </div>
