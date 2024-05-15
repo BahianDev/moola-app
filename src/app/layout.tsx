@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/services/react-query";
 import NextAuthProvider from "@/providers/authProvider";
+import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 const WalletConnectionProvider = dynamic(
@@ -40,6 +41,10 @@ export default function RootLayout({
           content={`Creating the first and biggest puzzle IP on Solana. Find Moola the golden cow to win $SOL 🐮`}
         />
         <meta property="twitter:image" content="/logo.png" />
+        <Script
+          src="https://code.createjs.com/1.0.0/createjs.min.js"
+          strategy="beforeInteractive"
+        />
       </head>
       <body className={inter.className}>
         <NextAuthProvider>

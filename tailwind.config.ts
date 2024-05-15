@@ -10,7 +10,9 @@ const config: Config = {
     extend: {
       backgroundImage: {
         home: "url('/home.png')",
-        home_cow : "url('/home_cow.png')"
+        home_cow : "url('/home_cow.png')",
+        farm : "url('/farm.png')"
+
       },
     },
   },

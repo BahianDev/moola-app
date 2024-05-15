@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F6F01A] w-full h-20 border-t-4 border-black flex items-center justify-between px-4 flex-col md:flex-row">
+    <footer className="bg-[#F6F01A] w-full h-20 border-t-4 border-black flex items-center justify-between px-4 flex-col md:flex-row z-50">
       <span className="text-black text-3xl font-medium">
         ©WHERESMOOLA.ALL RIGHTS RESERVED.
       </span>

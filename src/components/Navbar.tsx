@@ -2,23 +2,19 @@
 
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { useSession } from "next-auth/react";
-import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
-  const { data } = useSession();
   const { connected } = useWallet();
-
-  useEffect(() => {
-    console.log(data);
-  }, []);
 
   return (
     <nav className="bg-[#F6F01A] w-full h-24 relative z-[100] border-b-4 border-black p-2 flex items-center justify-end">
-      <img
-        src="/logo.png"
-        className="absolute h-44 top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-      />
+      <Link href={'/'}>
+        <img
+          src="/logo.png"
+          className="absolute h-44 top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        />
+      </Link>
       {connected && (
         <WalletMultiButton
           style={{

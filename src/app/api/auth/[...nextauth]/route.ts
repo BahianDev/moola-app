@@ -17,7 +17,6 @@ const handler = NextAuth({
                 }
             },
             profile(profile) {
-                console.log(profile)
                 return {
                     id: profile.id,
                     name: profile.username,
