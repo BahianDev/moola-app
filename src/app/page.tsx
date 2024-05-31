@@ -49,8 +49,8 @@ export default function Puzzle() {
     <main className="flex min-h-screen flex-col items-center justify-between h-screen">
       <Navbar />
       {connected ? (
-        <></>
-        // <MapComponent />
+        // <></>
+        <MapComponent />
       ) : (
         <div
           className={`${
