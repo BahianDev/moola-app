@@ -57,13 +57,13 @@ export default function Puzzle() {
             hovered ? "bg-home_cow" : "bg-home"
           } w-full h-full bg-cover bg-center flex items-end justify-center py-10`}
         >
-          <WalletMultiButton disabled>
+          <WalletMultiButton disabled={false}>
             <div
               className="p-4"
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
             >
-              COMING SOON
+              FIND MOOLA
             </div>
           </WalletMultiButton>
         </div>
