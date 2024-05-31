@@ -32,12 +32,12 @@ function LocationMarker() {
       const user: any = data
 
 
-      socket.emit("newMessage", {
-        lat: e.latlng.lat,
-        lng: e.latlng.lng,
-        receiver: publicKey?.toString(),
-        discordId: user.discordUser.id
-      });
+      // socket.emit("newMessage", {
+      //   lat: e.latlng.lat,
+      //   lng: e.latlng.lng,
+      //   receiver: publicKey?.toString(),
+      //   discordId: user.discordUser.id
+      // });
     },
   });
 
