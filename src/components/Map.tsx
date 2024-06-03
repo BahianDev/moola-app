@@ -32,12 +32,12 @@ function LocationMarker() {
       const user: any = data
 
 
-      // socket.emit("newMessage", {
-      //   lat: e.latlng.lat,
-      //   lng: e.latlng.lng,
-      //   receiver: publicKey?.toString(),
-      //   discordId: user.discordUser.id
-      // });
+      socket.emit("newMessage", {
+        lat: e.latlng.lat,
+        lng: e.latlng.lng,
+        receiver: publicKey?.toString(),
+        discordId: user.discordUser.id
+      });
     },
   });
 
@@ -64,14 +64,17 @@ export default function Map() {
 
     function onMessage(message: any) {
       if (message.result == true) {
-        queryClient.setQueryData(["config"], (old: any) => {
-          return {
-            ogCount: message.prize === "og" ? old.ogCount - 1 : old.ogCount,
-            wlCount: message.prize === "wl" ? old.wlCount - 1 : old.wlCount,
-          };
-        });
+        // queryClient.setQueryData(["config"], (old: any) => {
+        //   return {
+        //     ogCount: message.prize === "og" ? old.ogCount - 1 : old.ogCount,
+        //     wlCount: message.prize === "wl" ? old.wlCount - 1 : old.wlCount,
+        //   };
+        // });
+        // toast.success(
+        //   `Congratulations! You won ${message.prize.toUpperCase()}`
+        // );
         toast.success(
-          `Congratulations! You won ${message.prize.toUpperCase()}`
+          `Congratulations! You won 0.1 SOL`
         );
       } else {
         if (message.exists == true) {
