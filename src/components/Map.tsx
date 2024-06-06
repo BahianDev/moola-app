@@ -64,18 +64,18 @@ export default function Map() {
 
     function onMessage(message: any) {
       if (message.result == true) {
-        // queryClient.setQueryData(["config"], (old: any) => {
-        //   return {
-        //     ogCount: message.prize === "og" ? old.ogCount - 1 : old.ogCount,
-        //     wlCount: message.prize === "wl" ? old.wlCount - 1 : old.wlCount,
-        //   };
-        // });
-        // toast.success(
-        //   `Congratulations! You won ${message.prize.toUpperCase()}`
-        // );
+        queryClient.setQueryData(["config"], (old: any) => {
+          return {
+            ogCount: message.prize === "og" ? old.ogCount - 1 : old.ogCount,
+            wlCount: message.prize === "wl" ? old.wlCount - 1 : old.wlCount,
+          };
+        });
         toast.success(
-          `Congratulations! You won 0.1 SOL`
+          `Congratulations! You won ${message.prize.toUpperCase()}`
         );
+        // toast.success(
+        //   `Congratulations! You won 0.1 SOL`
+        // );
       } else {
         if (message.exists == true) {
           toast.error("You`re  already claimed!");
