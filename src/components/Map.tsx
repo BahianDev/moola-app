@@ -71,7 +71,7 @@ export default function Map() {
           };
         });
         toast.success(
-          `Congratulations! You won ${message.prize.toUpperCase()}`
+          `Congratulations! You won ${message.prize.toUpperCase()} Role`
         );
         // toast.success(
         //   `Congratulations! You won 0.1 SOL`
