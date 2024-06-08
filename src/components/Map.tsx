@@ -116,7 +116,7 @@ export default function Map() {
       <div className="absolute z-50 top-14 md:top-2 left-2">
         <img src="/book.png" className="h-32 md:h-44" />
         <span className="text-[16px] md:text-[22px] text-black absolute top-14 md:top-20 left-24 md:left-32 -rotate-6 font-medium border-b-4 border-red-500">
-          {config.ogCount} OG
+          {config.ogCount - 50} OG
         </span>
       </div>
       <MapContainer
