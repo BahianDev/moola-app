@@ -1,30 +1,3 @@
-// "use client";
-// import Navbar from "@/components/Navbar";
-// import Footer from "@/components/Footer";
-// import { useEffect } from "react";
-// import { signIn, useSession } from "next-auth/react";
-// import Link from "next/link";
-// import Canva from "@/components/Canva";
-
-// export default function Home() {
-//   const { status } = useSession();
-
-//   useEffect(() => {
-//     if (status !== "authenticated" && status !== "loading") {
-//       signIn("discord");
-//     }
-//   }, [status]);
-
-//   return (
-//     <main className="flex h-dvh w-dvw flex-col items-center justify-between">
-//       <Navbar />
-//       <Canva />
-//       <Footer />
-//     </main>
-//   );
-// }
-
-
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -57,13 +30,13 @@ export default function Puzzle() {
             hovered ? "bg-home_cow" : "bg-home"
           } w-full h-full bg-cover bg-center flex items-end justify-center py-10`}
         >
-          <WalletMultiButton disabled={true}>
+          <WalletMultiButton disabled={false}>
             <div
               className="p-4"
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
             >
-              COMING SOON
+              FIND MOOLA
             </div>
           </WalletMultiButton>
         </div>
